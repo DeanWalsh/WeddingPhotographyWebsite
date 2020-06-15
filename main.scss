@@ -3,10 +3,6 @@ $main-color: rgb(50, 50, 50);
 $secondary-color: rgb(100, 100, 100);
 $tertiary-color: rgb(139, 139, 139);
 
-@font-face {
-    font-family: "Amsterdam";
-    src: url("/Amsterdam.ttf");
-}
 
 * {
     overflow: hidden;
@@ -44,6 +40,7 @@ $tertiary-color: rgb(139, 139, 139);
             text-align: center;
             line-height: 5em;
 
+
             .list-content {
                 font-size: 1.4em;
 
@@ -62,7 +59,7 @@ $tertiary-color: rgb(139, 139, 139);
                 margin-bottom: 1.5em;
 
                 .fab {
-                    color: $secondary-color;
+                    color: $tertiary-color;
                 }
                     .fab:hover {
                         color: $main-color;
@@ -70,10 +67,11 @@ $tertiary-color: rgb(139, 139, 139);
             }
             .footer-text p {
                 margin-bottom: 1em;
-                color: $secondary-color;
+                color: $tertiary-color;
 
                 a {
-                    color: $secondary-color;
+                    color: $tertiary-color;
+                    text-decoration: underline;
                 }
 
                 a:hover {
@@ -132,18 +130,18 @@ $tertiary-color: rgb(139, 139, 139);
     from {opacity: .4}
     to {opacity: 1}
 }
-#about {
+#about, #packages, #contact {
     overflow-y: auto;
     box-sizing: border-box;
     border: solid $main-color;
 
-    .about-header {
+    .about-header, .packages-header, .contact-header {
         padding: 1rem 0 2rem 0;
         background-color: $main-color;
         text-align: center;
 
 
-        .about-title {
+        .about-title, .packages-title, .contact-title {
             color: $bg-color;
             background-color: $main-color;
             font-size: 2.5rem;
@@ -156,16 +154,16 @@ $tertiary-color: rgb(139, 139, 139);
             margin: 0.5em auto 0 auto;
         }
     }
-    .weddings-section, .equipment-section {
+    .weddings-section, .equipment-section, .package {
         padding: 2em;
 
-        .weddings-title, .equipment-title {
+        .weddings-title, .equipment-title, .package-title {
             font-size: 1.8rem;
             text-align: center;
             padding: 2em;
         }
 
-        .weddings-content, .equipment-content {
+        .weddings-content, .equipment-content, p {
             line-height: 2em;
             font-size: 1.2em;
             margin: 0 auto 0 auto;
@@ -198,8 +196,8 @@ $tertiary-color: rgb(139, 139, 139);
             background-color: $tertiary-color;
             height: 20em;
             background-size: cover;
-            cursor: pointer;
             transform: all 1s ease-in;
+
         }
     }
 }
@@ -215,12 +213,90 @@ $tertiary-color: rgb(139, 139, 139);
 .j {background: url(https://i.pinimg.com/originals/2a/26/af/2a26afadb5c623d5af41d5fc35fb998b.jpg);}
 .k {background: url(https://www.weddinginspirasi.com/wp-content/uploads/2015/01/romantic-destination-wedding-secrets-resorts-spas-huatulco-mexico-couple-resort-pool-bride-groom-sunset-picture.jpg);}
 .l {background: url(https://s3-ap-southeast-2.amazonaws.com/pdbmedia/2012/04/bride-and-groom-wedding-sunset.jpg);}
-.m {background: url(https://lh3.googleusercontent.com/proxy/baFOPFZ6UuUpnJPa_94ZKlDv9X4e4KbEeHcxYu_n6U4BI0Ea54S85RyScx-MwmEx_FdpFbSUHUWSFAVYD8DTkWucqaXPMLie45W5e08fjFigqJZLxH9PSIulWw);}
-.n {background: url(https://i.pinimg.com/originals/b1/48/bf/b148bf81f3d8fb3ac1e4c28230f34890.jpg);}
-.o {background: url(/man-and-woman-standing-beside-carriage-3204420.jpg);}
-.p {background: url(/man-in-gray-dress-suit-jacket-embraces-woman-wearing-wedding-931796.jpg);}
-.q {background: url(/a-photo-of-a-bride-and-groom-3684809.jpg); grid-column: 3 / 3;}
+.m {background: url(/man-and-woman-standing-beside-carriage-3204420.jpg);}
+.n {background: url(/man-in-gray-dress-suit-jacket-embraces-woman-wearing-wedding-931796.jpg);}
+.o {background: url(/a-photo-of-a-bride-and-groom-3684809.jpg);}
 .container div:hover {
     opacity: 0.8;
     transform: scale(0.98);
 }
+.packages-img {
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto 3rem auto;
+
+    img {
+        border: solid $main-color;
+        width: 30%;
+        height: 20%;
+    }
+}
+.contact-content {
+        padding: 5rem;
+        margin-top: 1rem;
+        display: grid;
+        grid-template-areas: 'name email' 'subject phone' 'message message';
+        grid-gap: 1.2rem;
+        margin-bottom: 1.2rem;
+
+        .name-input {
+            grid-area: name;
+            margin: 1rem 0;
+        }
+        .subject-input {
+            grid-area: subject;
+            margin: 1rem 0;
+        }
+        .email-input {
+            grid-area: email;
+            margin: 1rem 0;
+        }
+        .phone-input {
+            grid-area: phone;
+            margin: 1rem 0;
+        }
+        .message-input {
+            grid-area: message;
+            margin: 1rem 0;
+            height: 5rem;
+        }
+
+        .text-input {
+            padding: 0.5rem 1rem;
+        }
+
+    }
+
+.button {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
+    button[type='submit'] {
+        width: 10%;
+        padding: 0.4rem;
+        cursor: pointer;
+    }
+}
+button:hover {
+    transition: 0.5s;
+    background: $main-color;
+    color: $bg-color;
+}
+
+#contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    margin-top: 8rem;
+    padding: 3.2rem;
+    height: 15rem;
+    background: $main-color;
+
+    div, .fas, a, h3, p {
+        color: $bg-color;
+        background: $main-color;
+        text-decoration: none;
+    }
+}
+#contact {overflow: hidden;}
